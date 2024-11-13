@@ -1,3 +1,3 @@
 export * from "./createTable.controller";
-export * from "./insertData.controlller";
+export * from "./insertData.controller";
 export * from "./fetchData.controller";
