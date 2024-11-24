@@ -1,6 +1,7 @@
 import { Router } from "express";
-import { crudRouter } from "./crud.router";
+import { dbRouter } from "./crud.routes";
 
 export const rootRouter = Router();
 
-rootRouter.use("/crud", crudRouter);
+rootRouter.use("/db/admin", dbRouter);
+rootRouter.use("/db", dbRouter)
