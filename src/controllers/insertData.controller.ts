@@ -6,10 +6,11 @@ export const insertDataController = (req: Request, res: Response) => {
 
   // Validate input
   if (!tableName || !data || typeof data !== "object" || Array.isArray(data)) {
-    return res.status(400).json({
+    res.status(400).json({
       isSuccess: false,
       message: "Table name and valid data object are required.",
     });
+    return;
   }
 
   // Extract column names and values

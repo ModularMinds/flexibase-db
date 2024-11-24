@@ -6,10 +6,11 @@ export const fetchDataController = (req: Request, res: Response) => {
 
   // Validate input
   if (!tableName) {
-    return res.status(400).json({
+    res.status(400).json({
       isSuccess: false,
       message: "Table name is required.",
     });
+    return;
   }
 
   // Build the SQL query

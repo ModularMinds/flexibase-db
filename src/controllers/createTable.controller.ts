@@ -6,10 +6,11 @@ export const createTableController = (req: Request, res: Response) => {
 
   // Validate input
   if (!tableName || !Array.isArray(tableColumns) || tableColumns.length === 0) {
-    return res.status(400).json({
+    res.status(400).json({
       isSuccess: false,
       message: "Table name and valid column definitions are required.",
     });
+    return;
   }
 
   // Build the column definitions string
@@ -28,9 +29,10 @@ export const createTableController = (req: Request, res: Response) => {
   // Execute the query
   db.query(createTableQuery, [], (err) => {
     if (err) {
-      return res.status(500).json({ isSuccess: false, error: err.message });
+      res.status(500).json({ isSuccess: false, error: err.message });
+      return;
     }
-    return res.status(201).json({
+    res.status(201).json({
       isSuccess: true,
       message: `Table '${tableName}' created successfully.`,
     });

@@ -1,16 +1,22 @@
+import "./config/env";
 
 import express from "express";
-import cors from "cors"
+import cors from "cors";
+
 import { rootRouter } from "./routers";
 
 const app = express();
 
-app.use(cors())
+app.use(cors());
 
-app.use("/api", rootRouter)
+app.use("/api", rootRouter);
+
+app.get("/api/db/service-check", (_, res) => {
+  res.json({ isServiceAvailable: true });
+});
 
 app.listen(process.env.FLEXIBASE_DB_EXPOSE_PORT, () => {
   console.log(
-    `FlexiBase DB started successfully on port ${process.env.FLEXIBASE_DB_EXPOSE_PORT}`
+    `Flexibase DB started successfully on port ${process.env.FLEXIBASE_DB_EXPOSE_PORT}`
   );
 });
