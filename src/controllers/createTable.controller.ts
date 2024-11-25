@@ -16,9 +16,8 @@ export const createTableController = (req: Request, res: Response) => {
   // Build the column definitions string
   const columnDefinitions = tableColumns
     .map((column: { name: string; type: string; constraints?: string }) => {
-      if (!column.name || !column.type) {
+      if (!column.name || !column.type)
         throw new Error("Each column must have a name and a type.");
-      }
       return `${column.name} ${column.type} ${column.constraints || ""}`.trim();
     })
     .join(", ");
