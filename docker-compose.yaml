@@ -19,7 +19,7 @@ services:
     build: .
     container_name: flexibase-db
     ports:
-      - ${FLEXIBASE_DB_EXPOSE_PORT}:5001
+      - ${FLEXIBASE_DB_EXPOSE_PORT}:${FLEXIBASE_DB_EXPOSE_PORT}
     environment:
       - FLEXIBASE_DB_EXPOSE_PORT=${FLEXIBASE_DB_EXPOSE_PORT}
       - FLEXIBASE_ADMIN_USER=${FLEXIBASE_ADMIN_USER}
