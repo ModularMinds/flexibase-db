@@ -5,4 +5,4 @@ import { fetchDataController, insertDataController } from "../controllers";
 export const dbRouter = Router();
 
 dbRouter.route("/insert-data").post(insertDataController);
-dbRouter.route("/fetch-data").get(fetchDataController);
+dbRouter.route("/fetch-data").post(fetchDataController);
