@@ -1,3 +1,4 @@
+export * from "./getTables.controller";
 export * from "./createTable.controller";
 export * from "./deleteTable.controller";
 

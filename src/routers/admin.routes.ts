@@ -1,7 +1,10 @@
 import { Router } from "express";
 
-import { createTableController, deleteTableController } from "../controllers";
-import { getAllTablesController } from "../controllers/getTables.controller";
+import {
+  createTableController,
+  deleteTableController,
+  getAllTablesController,
+} from "../controllers";
 
 export const adminRouter = Router();
 
